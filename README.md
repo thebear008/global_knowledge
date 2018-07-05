@@ -72,19 +72,22 @@ Here are lists with one intruder. Please find it.
   - [ ] `ps faux &1>2 file.log`
 
 14. bash loops
-  - [ ] ```
+  - [ ] while
+```
 while read LINE
 do
   echo $LINE
 done < file.log
 ```
-  - [ ] ```
+  - [ ] for
+```
 for i in {0..10}
 do
   echo ${i}
 done
 ```
-  - [ ] ```
+  - [ ] foreach
+```
 foreach i in $(cat file.log)
 do
   echo $i

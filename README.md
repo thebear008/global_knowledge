@@ -8,8 +8,8 @@ Here are lists with one intruder. Please find it.
 
 1. Code source
   - [ ] Git
-  - [ ] Svn
   - [ ] IDE
+  - [ ] SVN
 
 2. Distributions
   - [ ] Debian
@@ -19,7 +19,7 @@ Here are lists with one intruder. Please find it.
 3. Rights
   - [ ] Copyright
   - [ ] Copyleft
-  - [ ] Creative Commons
+  - [ ] GPL
 
 4. Users
   - [ ] admin
@@ -36,30 +36,30 @@ Here are lists with one intruder. Please find it.
   - [ ] 22
   - [ ] 25
 
-7. Methodologies
+7. Agile
+  - [ ] BCC
   - [ ] TDD
   - [ ] Scrum
-  - [ ] BCC
 
 8. Get argument from command line
-  - [ ] `$1`
   - [ ] `$ARGV[1]`
+  - [ ] `$1`
   - [ ] `$PARAM[1]`
 
 9. Curl command
   - [ ] `curl -XPOST https://server.com/users`
-  - [ ] `curl --post --insecure https://server.com/users`
   - [ ] `curl -L -k -s --data '{"key": "value"}' https://server.com/users`
+  - [ ] `curl --post --insecure https://server.com/users`
 
 10. Process list
-  - [ ] `ps`
   - [ ] `top`
   - [ ] `id`
+  - [ ] `ps`
 
 11. Help me
+  - [ ] `mysql -h`
   - [ ] `man top`
   - [ ] `cp --help`
-  - [ ] `mysql -h`
 
 12. Search
   - [ ] `grep -rinI toto *.log`
@@ -68,8 +68,8 @@ Here are lists with one intruder. Please find it.
 
 13. Standards
   - [ ] `time python script.py 1>> file.log 2>> error.log`
-  - [ ] `echo "select name from users" | mysql > file.log 2>&1`
   - [ ] `ps faux &1>2 file.log`
+  - [ ] `echo "select name from users" | mysql > file.log 2>&1`
 
 14. bash loops
   - [ ] while
@@ -79,18 +79,18 @@ do
   echo $LINE
 done < file.log
 ```
-  - [ ] for
-```
-for i in {0..10}
-do
-  echo ${i}
-done
-```
   - [ ] foreach
 ```
 foreach i in $(cat file.log)
 do
   echo $i
+done
+```
+  - [ ] for
+```
+for i in {0..10}
+do
+  echo ${i}
 done
 ```
 
@@ -102,10 +102,10 @@ done
 
 16. Read
   - [ ] `cat /tmp/toto.log`
-  - [ ] `tail -f  ~/file.log`
   - [ ] `less /var/log/apache2/access.log`
+  - [ ] `tail -f  ~/file.log`
 
-### Find intruder
+## Misc
 
 Here are lists with one intruder. Please find it.
 
@@ -134,7 +134,30 @@ Here are lists with one intruder. Please find it.
   - [ ] SSH
   - [ ] FTP
 
+6. Windows Server
+  - [ ] 2000
+  - [ ] 2010
+  - [ ] 2016
 
+7. Softwares
+  - [ ] NetMeeting
+  - [ ] Active Directory
+  - [ ] OpenLDAP
+
+8. Attributes
+  - [ ] `cn`
+  - [ ] `zn`
+  - [ ] `dn`
+
+9. Windows users
+  - [ ] ROOT
+  - [ ] MASTER
+  - [ ] SYSTEM
+
+10. DNS record
+  - [ ] ALIAS
+  - [ ] A
+  - [ ] MX
 
 ## Python
 
@@ -154,6 +177,38 @@ Here are lists with one intruder. Please find it.
   - [ ] dict
   - [ ] tuple
   - [ ] list
+
+4. Loops
+```
+for i in [0, 1, 2, 3]:
+    print(i)
+```
+
+```
+for i in range(4):
+    print(i)
+```
+
+```
+for i in {0: 0, 1: 1, 2: 2; 3: 3}:
+    print(i)
+```
+
+5. Built-in
+  - [ ] `__eq__`
+  - [ ] `__init__`
+  - [ ] `__constructor__`
+
+6. Types
+` a = (1) `
+  - [ ] len(i) == 1
+  - [ ] isinstance(a, tuple)
+  - [ ] a != '1'
+
+7. Hashable
+  - [ ] `a` is a list `a[0] = 0`
+  - [ ] `a` is a dict `a['0'] = 0`
+  - [ ] `a` is a tuple `a[0] = 0`
 
 ## Web
 
@@ -185,6 +240,8 @@ Here are lists with one intruder. Please find it.
   - [ ] TXT
 
 ## Code
+
+Write the result.
 
 ### Python
 
@@ -222,34 +279,13 @@ def addition(a):
 print(addition(a))
 ```
 
-4. Loops
+4. Try
 ```
-for i in [0, 1, 2, 3]:
-    print(i)
-```
+key = 3
+secrets = [ None, 1, 'abc', {}, (1,) ]
 
+if secrets[key]:
+    print('ok')
+else:
+    print('KO with value {}'.format(secrets['3']))
 ```
-for i in range(4):
-    print(i)
-```
-
-```
-for i in {0: 0, 1: 1, 2: 2; 3: 3}:
-    print(i)
-```
-
-5. Built-in
-  - [ ] `__eq__`
-  - [ ] `__init__`
-  - [ ] `__constructor__`
-
-6. Types
-` a = (1) `
-  - [ ] len(i) == 1
-  - [ ] isinstance(a, tuple)
-  - [ ] a != '1'
-
-7. Hashable
-  - [ ] `a` is a list `a[0] = 0`
-  - [ ] `a` is a dict `a['0'] = 0`
-  - [ ] `a` is a tuple `a[0] = 0`

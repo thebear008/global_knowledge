@@ -192,20 +192,20 @@ for i in range(4):
 ```
 
 ```
-for i in {0: 0, 1: 1, 2: 2; 3: 3}:
+for i in {'zero': 0, 'one': 1, 'two': 2, 'three': 3}:
     print(i)
 ```
 
 5. Built-in
+  - [ ] `__constructor__`
   - [ ] `__eq__`
   - [ ] `__init__`
-  - [ ] `__constructor__`
 
 6. Types
 ` a = (1) `
-  - [ ] len(i) == 1
-  - [ ] isinstance(a, tuple)
-  - [ ] a != '1'
+  - [ ] `len(i) == 1`
+  - [ ] `isinstance(a, int)`
+  - [ ] `a != '1'`
 
 7. Hashable
   - [ ] `a` is a list `a[0] = 0`
@@ -218,8 +218,8 @@ Here are lists with one intruder. Please find it.
 
 1. Semantic
   - [ ] `GET /index.php?id=123`
-  - [ ] `GET /update.php?value=alpha&key=name&id=123`
   - [ ] `GET /servers/123`
+  - [ ] `GET /update.php?value=alpha&key=name&id=123`
 
 2. Technologies
   - [ ] HTML/CSS/Javascript
@@ -233,13 +233,13 @@ Here are lists with one intruder. Please find it.
 
 4. Rules
   - [ ] W3C
-  - [ ] RestFul
+  - [ ] RESTFul
   - [ ] MVC
 
 5. Format
   - [ ] JSON
-  - [ ] XML
   - [ ] TXT
+  - [ ] XML
 
 ## Code
 

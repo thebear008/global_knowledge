@@ -95,9 +95,11 @@ done
 ```
 
 15. quote me
+
 `MY_VAR=8  echo '${MY_VAR};22' | cut -d ';' -f1`
-  - [ ] 22
-  - [ ] 8
+
+  - [ ] `22`
+  - [ ] `8`
   - [ ] `${MY_VAR}`
 
 16. Read

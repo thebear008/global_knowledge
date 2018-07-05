@@ -202,8 +202,10 @@ for i in {'zero': 0, 'one': 1, 'two': 2, 'three': 3}:
   - [ ] `__init__`
 
 6. Types
+
 ` a = (1) `
-  - [ ] `len(i) == 1`
+
+  - [ ] `len(a) == 1`
   - [ ] `isinstance(a, int)`
   - [ ] `a != '1'`
 

@@ -45,7 +45,7 @@ Here are lists with one intruder. Please find it.
 
 `bash toto.sh 28`
 
-  - [ ] `[ -z "$0" ]`
+  - [ ] `[ -n "$0" ]`
   - [ ] `[ "$1" == 'toto.sh' ]`
   - [ ] `[ "$PARAM[1]" -eq 'toto.sh' ]`
 
@@ -390,7 +390,7 @@ except IndexError:
 ```
 import requests
 
-my_request = requests.request('patch', 'https://google.ca')
+my_request = requests.request('post', 'https://google.ca')
 
 if my_request.status_code == 200:
     print('ok')
@@ -413,9 +413,17 @@ except json.JSONDecodeError:
 
 10. Files
 
-What is going to happen if one calls this script 3 times ?
+What is the output ?
 
 ```
+rm -f /tmp/test.txt
+cat << EOF > /tmp/test.py
 with open('/tmp/test.txt', "w") as f:
     f.write("TEST")
+EOF
+for i in {1..3}
+do
+  python /tmp/test.py
+done
+cat /tmp/test.txt
 ```

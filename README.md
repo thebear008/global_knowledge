@@ -11,7 +11,7 @@ Here are lists with one intruder. Please find it.
   - [ ] IDE
   - [ ] SVN
 
-2. Distributions
+2. Distributions still alive
   - [ ] Debian
   - [ ] CentOS
   - [ ] Mandriva
@@ -21,17 +21,17 @@ Here are lists with one intruder. Please find it.
   - [ ] Copyleft
   - [ ] GPL
 
-4. Users
-  - [ ] admin
+4. Common users
+  - [ ] apache
   - [ ] root
   - [ ] administrator
 
 5. Commands
   - [ ] sudo
+  - [ ] move
   - [ ] ls
-  - [ ] dir
 
-6. Ports
+6. Ports with safe protocols
   - [ ] 21
   - [ ] 22
   - [ ] 25
@@ -41,10 +41,13 @@ Here are lists with one intruder. Please find it.
   - [ ] TDD
   - [ ] Scrum
 
-8. Get argument from command line
-  - [ ] `$ARGV[1]`
-  - [ ] `$1`
-  - [ ] `$PARAM[1]`
+8. Argument from command line
+
+`bash toto.sh 28`
+
+  - [ ] `[ -z "$0" ]`
+  - [ ] `[ "$1" == 'toto.sh' ]`
+  - [ ] `[ "$PARAM[1]" -eq 'toto.sh' ]`
 
 9. Curl command
   - [ ] `curl -XPOST https://server.com/users`
@@ -102,10 +105,15 @@ done
   - [ ] `8`
   - [ ] `${MY_VAR}`
 
-16. Read
-  - [ ] `cat /tmp/toto.log`
-  - [ ] `less /var/log/apache2/access.log`
-  - [ ] `tail -f  ~/file.log`
+16. Common reading rights
+  - [ ] `cat /var/log/auth.log`
+  - [ ] `tail  ~/file.log`
+  - [ ] `tac /tmp/toto.log`
+
+17. Change rights
+  - [ ] `chmod 755 *.sh`
+  - [ ] `chmod -p *.sh`
+  - [ ] `chmod +x *.sh`
 
 ## Misc
 
@@ -126,13 +134,13 @@ Here are lists with one intruder. Please find it.
   - [ ] PostgreSQL
   - [ ] MySQL
 
-4. Algorithms
+4. Hash still OK for production
   - [ ] md5
-  - [ ] aes256
-  - [ ] sha1
+  - [ ] sha256
+  - [ ] sha512
 
-5. Protocols
-  - [ ] Telnet
+5. Secured
+  - [ ] HTTPS
   - [ ] SSH
   - [ ] FTP
 
@@ -151,15 +159,21 @@ Here are lists with one intruder. Please find it.
   - [ ] `zn`
   - [ ] `dn`
 
-9. Windows users
+9. Default Windows users
   - [ ] ROOT
-  - [ ] MASTER
+  - [ ] ADMINISTRATOR
   - [ ] SYSTEM
 
 10. DNS record
   - [ ] ALIAS
   - [ ] A
   - [ ] MX
+
+
+11. Is JSON ?
+  - [ ] `jsonize file.json`
+  - [ ] `cat file.json | python -m json.tool`
+  - [ ] `cat file.json | jq .`
 
 ## Python
 
@@ -175,7 +189,7 @@ Here are lists with one intruder. Please find it.
   - [ ] for
   - [ ] while
 
-3. Iterables
+3. Editable
   - [ ] dict
   - [ ] tuple
   - [ ] list
@@ -214,26 +228,32 @@ for i in {'zero': 0, 'one': 1, 'two': 2, 'three': 3}:
   - [ ] `a` is a dict `a['0'] = 0`
   - [ ] `a` is a tuple `a[0] = 0`
 
+8. Check my code
+  - [ ] pylint
+  - [ ] flake8
+  - [ ] pytest
+
+
 ## Web
 
 Here are lists with one intruder. Please find it.
 
 1. Semantic
-  - [ ] `GET /index.php?id=123`
-  - [ ] `GET /servers/123`
+  - [ ] `PATCH /users/abcdef/role/admin`
+  - [ ] `DELETE /servers/123`
   - [ ] `GET /update.php?value=alpha&key=name&id=123`
 
 2. Technologies
   - [ ] HTML/CSS/Javascript
-  - [ ] Passenger/Ruby
   - [ ] Objective C/Xcode
+  - [ ] Passenger/Ruby
 
 3. Vulnerabilities
+  - [ ] AJAX
   - [ ] XSS
   - [ ] SQL Injection
-  - [ ] AJAX
 
-4. Rules
+4. Set of rules
   - [ ] W3C
   - [ ] RESTFul
   - [ ] MVC
@@ -250,6 +270,7 @@ Write the result.
 ### Python
 
 1. Scopes
+
 ```
 a = 4
 
@@ -262,6 +283,7 @@ print(a)
 ```
 
 2. Cursors
+
 ```
 a = list()
 
@@ -274,6 +296,7 @@ print(a)
 ```
 
 3. Types
+
 ```
 a = 123
 
@@ -284,6 +307,7 @@ print(addition(a))
 ```
 
 4. Try
+
 ```
 key = 3
 secrets = [ None, 1, 'abc', {}, (1,) ]
@@ -292,4 +316,106 @@ if secrets[key]:
     print('ok')
 else:
     print('KO with value {}'.format(secrets['3']))
+```
+
+5. Interpretor
+
+File `file.py` contains the following lines : 
+
+```
+#!/usr/bin/python
+
+class MyClass(object):
+    def __init__(self):
+        self.name = 'jean'
+        self.firstname = 'robert'
+
+
+my_obj = MyClass()
+
+print my_obj.name
+```
+
+We are executing 3 lines, what is the output ?
+
+```
+chmod 700 file.py
+./file.py
+python3 file.py
+```
+
+6. Decorator
+
+```
+from functools import wraps
+
+
+def my_decorator(f):
+    @wraps(f)
+    def decoration(*args, **kwargs):
+        print(args[1])
+        return f(*args, **kwargs)
+    return decoration
+
+
+@my_decorator
+def my_function(*args, **kwargs):
+    if 'login' in kwargs:
+        print('hello')
+    else:
+        print('bye')
+
+my_function(123, 'abc', 'def', user='login', password='xxyy')
+```
+
+7. Exception
+
+```
+my_list = [1, 2, 3]
+
+
+try:
+    if my_list[3] > my_list[1]:
+        print('here')
+    else:
+        print('there')
+except ValueError:
+    print('Error 1')
+except IndexError:
+    print('Error 2')
+```
+
+8. Requests
+
+```
+import requests
+
+my_request = requests.request('patch', 'https://google.ca')
+
+if my_request.status_code == 200:
+    print('ok')
+elif my_request.status_code == 405:
+    print('ok2')
+else:
+    print('ko')
+```
+
+9. JSON
+
+```
+import json
+
+try:
+    my_json = json.loads('{"key": [1, 2, 3]}')
+except json.JSONDecodeError:
+    print('try again')
+```
+
+10. Files
+
+What is going to happen if one calls this script 3 times ?
+
+```
+with open('/tmp/test.txt', "w") as f:
+    f.write("TEST")
 ```

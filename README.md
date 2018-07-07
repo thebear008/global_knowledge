@@ -16,22 +16,22 @@ Here are lists with one intruder. Please find it.
   - [ ] CentOS
   - [ ] Mandriva
 
-3. Rights
-  - [ ] Copyright
-  - [ ] Copyleft
-  - [ ] GPL
+3. Packages
+  - [ ] yum
+  - [ ] rpm
+  - [ ] deb
 
-4. Common users
+4. Default users
   - [ ] apache
   - [ ] root
-  - [ ] administrator
+  - [ ] superadmin
 
 5. Commands
   - [ ] sudo
   - [ ] move
   - [ ] ls
 
-6. Ports with safe protocols
+6. Ports with unsafe protocols
   - [ ] 21
   - [ ] 22
   - [ ] 25
@@ -105,7 +105,7 @@ done
   - [ ] `8`
   - [ ] `${MY_VAR}`
 
-16. Common reading rights
+16. Reading permissions
   - [ ] `cat /var/log/auth.log`
   - [ ] `tail  ~/file.log`
   - [ ] `tac /tmp/toto.log`
@@ -195,16 +195,22 @@ Here are lists with one intruder. Please find it.
   - [ ] list
 
 4. Loops
+
+- [ ] using list
+
 ```
 for i in [0, 1, 2, 3]:
     print(i)
 ```
+
+- [ ] using range
 
 ```
 for i in range(4):
     print(i)
 ```
 
+- [ ] using dict
 ```
 for i in {'zero': 0, 'one': 1, 'two': 2, 'three': 3}:
     print(i)

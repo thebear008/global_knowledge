@@ -11,12 +11,12 @@ Here are lists with one intruder. Please find it.
   - [ ] IDE
   - [ ] SVN
 
-2. Distributions still alive
+2. Linux Distributions still alive
   - [ ] Debian
   - [ ] CentOS
   - [ ] Mandriva
 
-3. Packages
+3. Packages and not a command
   - [ ] yum
   - [ ] rpm
   - [ ] deb
@@ -46,15 +46,15 @@ Here are lists with one intruder. Please find it.
 `bash toto.sh 28`
 
   - [ ] `[ -n "$0" ]`
-  - [ ] `[ "$1" == 'toto.sh' ]`
-  - [ ] `[ "$PARAM[1]" -eq 'toto.sh' ]`
+  - [ ] `[ "$1" = '28' ]`
+  - [ ] `[ "$PARAM[1]" -eq '28' ]`
 
-9. Curl command
+9. Curl command with wrong parameters
   - [ ] `curl -XPOST https://server.com/users`
   - [ ] `curl -L -k -s --data '{"key": "value"}' https://server.com/users`
   - [ ] `curl --post --insecure https://server.com/users`
 
-10. Process list
+10. Show process list
   - [ ] `top`
   - [ ] `id`
   - [ ] `ps`
@@ -74,7 +74,7 @@ Here are lists with one intruder. Please find it.
   - [ ] `ps faux &1>2 file.log`
   - [ ] `echo "select name from users" | mysql > file.log 2>&1`
 
-14. bash loops
+14. bash existing loops
   - [ ] while
 ```
 while read LINE
@@ -97,7 +97,7 @@ do
 done
 ```
 
-15. quote me
+15. quote me, what is the output ?
 
 `MY_VAR=8  echo '${MY_VAR};22' | cut -d ';' -f1`
 
@@ -105,7 +105,7 @@ done
   - [ ] `8`
   - [ ] `${MY_VAR}`
 
-16. Reading permissions
+16. Reading permissions for a standard user
   - [ ] `cat /var/log/auth.log`
   - [ ] `tail  ~/file.log`
   - [ ] `tac /tmp/toto.log`
@@ -119,17 +119,17 @@ done
 
 Here are lists with one intruder. Please find it.
 
-1. Languages
+1. Languages OOP
   - [ ] python
   - [ ] bash
   - [ ] ksh
 
-2. HTTP servers
+2. HTTP servers right for Production
   - [ ] Apache HTTPD
   - [ ] Werkzeug
   - [ ] NGINX
 
-3. Databases
+3. Relational Databases 
   - [ ] MongoDB
   - [ ] PostgreSQL
   - [ ] MySQL
@@ -144,17 +144,17 @@ Here are lists with one intruder. Please find it.
   - [ ] SSH
   - [ ] FTP
 
-6. Windows Server
+6. Right Windows Server Version
   - [ ] 2000
   - [ ] 2010
   - [ ] 2016
 
-7. Softwares
+7. Softwares to find groups or users
   - [ ] NetMeeting
   - [ ] Active Directory
   - [ ] OpenLDAP
 
-8. Attributes
+8. Standard Attributes for a record
   - [ ] `cn`
   - [ ] `zn`
   - [ ] `dn`
@@ -170,8 +170,8 @@ Here are lists with one intruder. Please find it.
   - [ ] MX
 
 
-11. Is JSON ?
-  - [ ] `jsonize file.json`
+11. Correct command to detect a well formatted JSON file
+  - [ ] `jsonization file.json`
   - [ ] `cat file.json | python -m json.tool`
   - [ ] `cat file.json | jq .`
 
@@ -194,7 +194,7 @@ Here are lists with one intruder. Please find it.
   - [ ] tuple
   - [ ] list
 
-4. Loops
+4. Loops, output should be "0 1 2 3"
 
 - [ ] using list
 
@@ -221,7 +221,7 @@ for i in {'zero': 0, 'one': 1, 'two': 2, 'three': 3}:
   - [ ] `__eq__`
   - [ ] `__init__`
 
-6. Types
+6. Types; which test is wrong ?
 
 ` a = (1) `
 
@@ -229,12 +229,12 @@ for i in {'zero': 0, 'one': 1, 'two': 2, 'three': 3}:
   - [ ] `isinstance(a, int)`
   - [ ] `a != '1'`
 
-7. Hashable
+7. Hashable, which line does raise an Exception ?
   - [ ] `a` is a list `a[0] = 0`
   - [ ] `a` is a dict `a['0'] = 0`
   - [ ] `a` is a tuple `a[0] = 0`
 
-8. Check my code
+8. Check my code.
   - [ ] pylint
   - [ ] flake8
   - [ ] pytest
